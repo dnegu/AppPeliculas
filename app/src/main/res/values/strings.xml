@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DneguApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="empty_state_message">No se encontro registros</string>
+    <string name="add">Nuevo</string>
+    <string name="ingresar">Iniciar Sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login_info">Inicie sesión con su cuenta de dnegu para empezar a usar la aplicación</string>
+    <string name="usuarioLogin">Admin</string>
+    <string name="passwordLogin">Password*123</string>
+    <string name="usuario_password_invalidos">Usuario o Contraseña incorrectos</string>
+</resources>
