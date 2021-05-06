@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             val user = txtUsername.text.toString()
             val pass = txtPassword.text.toString()
 
-            if(user == getString(R.string.usuarioLogin) && pass == getString(R.string.passwordLogin) || true){
+            if(user == getString(R.string.usuarioLogin) && pass == getString(R.string.passwordLogin)){
                 startActivity(Intent(this, MainActivity::class.java))
                 //viewModel.login(user)
             }

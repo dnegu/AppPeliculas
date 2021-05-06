@@ -13,4 +13,7 @@
     <string name="usuarioLogin">Admin</string>
     <string name="passwordLogin">Password*123</string>
     <string name="usuario_password_invalidos">Usuario o Contraseña incorrectos</string>
+    <string name="imagenpelicula">ImagenPelicula</string>
+    <string name="nombre_pelicula">Nombre Pelicula</string>
+    <string name="urlPelicula">https://image.tmdb.org/t/p/w500/</string>
 </resources>

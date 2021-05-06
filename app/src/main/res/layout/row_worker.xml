@@ -14,34 +14,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
         <TextView
             android:id="@+id/lblWorkerName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@{String.valueOf(obj.poster_path)}"
+            android:layout_marginEnd="8dp"
+            android:text="@{String.valueOf(obj.original_title)}"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="John Doe" />
+            tools:text="@string/nombre_pelicula" />
 
         <TextView
-            android:id="@+id/lblWorkerId"
+            android:id="@+id/lblMovieVote"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="16dp"
-            android:text="@{String.valueOf(obj.id)}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{String.valueOf(obj.vote_average)+'/'+String.valueOf(10.0)}"
+            app:layout_constraintEnd_toEndOf="@+id/lblWorkerName"
+            app:layout_constraintStart_toStartOf="@+id/lblWorkerName"
             app:layout_constraintTop_toBottomOf="@+id/lblWorkerName"
             tools:text="9999999999" />
+
+        <TextView
+            android:id="@+id/lblMovieDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(obj.release_date)}"
+            app:layout_constraintEnd_toEndOf="@+id/lblWorkerName"
+            app:layout_constraintStart_toStartOf="@+id/lblWorkerName"
+            app:layout_constraintTop_toBottomOf="@+id/lblMovieVote"
+            tools:text="9999999999" />
+
+        <ImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/imagenpelicula"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

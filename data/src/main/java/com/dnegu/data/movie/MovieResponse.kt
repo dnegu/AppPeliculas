@@ -11,6 +11,7 @@ data class MovieResponse (
     val overview:String?=""
 ): RoomMapper<MovieEntity> {
     override fun mapToRoomEntity(): MovieEntity {
-        return MovieEntity(id,poster_path,original_title,vote_average,release_date,overview)
+        return MovieEntity(id,
+            "https://image.tmdb.org/t/p/w500/$poster_path",original_title,vote_average,release_date,overview)
     }
 }
