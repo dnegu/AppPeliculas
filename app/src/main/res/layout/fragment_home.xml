@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="com.dnegu.apptemplate.ui.home.WorkerListViewModel" />
+            type="com.dnegu.apptemplate.ui.home.MovieListViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

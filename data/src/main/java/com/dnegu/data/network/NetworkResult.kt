@@ -4,8 +4,12 @@ import com.dnegu.core.common.Failure
 import com.dnegu.core.common.HttpError
 import com.dnegu.core.common.Result
 import com.dnegu.core.common.Success
+import com.dnegu.core.movie.Movie
 import com.dnegu.data.common.DB_ENTRY_ERROR
 import com.dnegu.data.common.GENERAL_NETWORK_ERROR
+import com.dnegu.data.movie.ApiResponse
+import com.dnegu.data.movie.MovieEntity
+import com.dnegu.data.movie.MovieResponse
 import retrofit2.Response
 import java.io.IOException
 
@@ -73,6 +77,21 @@ fun <T : DomainMapper<R>, R : Any> Response<List<T>>.getDataAsList(): Result<Lis
     try {
         onSuccess { responseList -> return Success(responseList.map { it.mapToDomainModel() }) }
         onFailure { return Failure(it) }
+        return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))
+    } catch (e: IOException) {
+        return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))
+    }
+}
+
+fun <T : RoomMapper<R>, R : DomainMapper<U>, U : Any> Response<ApiResponse<T>>.getDataAsListApi(): Result<List<U>> {
+    try {
+        onSuccess { responseList ->
+            val listOfEntities = responseList.results.map { it.mapToRoomEntity() }
+            return Success(listOfEntities.map { it.mapToDomainModel() })
+        }
+        onFailure {
+            return Failure(HttpError(Throwable(DB_ENTRY_ERROR)))
+        }
         return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))
     } catch (e: IOException) {
         return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))

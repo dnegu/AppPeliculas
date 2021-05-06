@@ -12,5 +12,5 @@ val databaseModule = module {
             .fallbackToDestructiveMigration().build()
     }
 
-    single { get<AppDatabase>().workerDao() }
+    single { get<AppDatabase>().movieDao() }
 }

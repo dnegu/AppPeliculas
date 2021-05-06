@@ -1,7 +1,7 @@
 package com.dnegu.core.common
 
-import com.dnegu.core.worker.Worker
+import com.dnegu.core.movie.Movie
 
 interface TypeFactory {
-    fun type(item: Worker): Int
+    fun type(item: Movie): Int
 }

@@ -19,7 +19,8 @@ android {
 
     buildTypes {
         debug {
-            resValue("string", "api_url", "https://m1.webcontrolcorp.com/ws/lab/api/api/")
+            resValue("string", "api_url", "https://api.themoviedb.org/3/movie/")
+            //resValue("string", "api_url", "https://m1.webcontrolcorp.com/ws/lab/api/api/")
         }
         release {
             resValue("string", "api_url", "https://m1.webcontrolcorp.com/ws/lab/api/")

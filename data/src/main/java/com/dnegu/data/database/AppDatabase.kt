@@ -2,10 +2,10 @@ package com.dnegu.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.dnegu.data.worker.WorkerDao
-import com.dnegu.data.worker.WorkerEntity
+import com.dnegu.data.movie.MovieDao
+import com.dnegu.data.movie.MovieEntity
 
-@Database(entities = [WorkerEntity::class], version = 1, exportSchema = false)
+@Database(entities = [MovieEntity::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun workerDao(): WorkerDao
+    abstract fun movieDao(): MovieDao
 }
