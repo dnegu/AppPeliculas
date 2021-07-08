@@ -98,6 +98,21 @@ fun <T : RoomMapper<R>, R : DomainMapper<U>, U : Any> Response<ApiResponse<T>>.g
     }
 }
 
+fun <T : RoomMapper<R>, R : DomainMapper<U>, U : Any> Response<ApiResponse<T>>.getDataAsListRoom(): Result<List<R>> {
+    try {
+        onSuccess { responseList ->
+            val listOfEntities = responseList.results.map { it.mapToRoomEntity() }
+            return Success(listOfEntities)
+        }
+        onFailure {
+            return Failure(HttpError(Throwable(DB_ENTRY_ERROR)))
+        }
+        return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))
+    } catch (e: IOException) {
+        return Failure(HttpError(Throwable(GENERAL_NETWORK_ERROR)))
+    }
+}
+
 /**
  * Use this function when you need to fetch list of data from the API and cache it locally
  */

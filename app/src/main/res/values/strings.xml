@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">DneguApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">Peliculas</string>
+    <string name="title_dashboard">Detalles</string>
     <string name="title_notifications">Notifications</string>
 
     <string name="empty_state_message">No se encontro registros</string>
-    <string name="add">Nuevo</string>
+    <string name="add">Siguientes</string>
+    <string name="minus">Anteriores</string>
     <string name="ingresar">Iniciar Sesión</string>
     <string name="usuario">Usuario</string>
     <string name="password">Contraseña</string>
@@ -16,4 +17,23 @@
     <string name="imagenpelicula">ImagenPelicula</string>
     <string name="nombre_pelicula">Nombre Pelicula</string>
     <string name="urlPelicula">https://image.tmdb.org/t/p/w500/</string>
+    <string name="titulo_de_pelicula">Titulo de Pelicula</string>
+    <string name="titulo_original">Titulo original:</string>
+    <string name="titulo_traducido">Titulo traducido:</string>
+    <string name="luca">Luca</string>
+    <string name="lenguaje_original">Lenguaje original:</string>
+    <string name="en">EN</string>
+    <string name="apto_para_todos">Apto Para Todos:</string>
+    <string name="cant_votos">Cant. Votos:</string>
+    <string name="_1000">1000</string>
+    <string name="puntaje">Puntaje:</string>
+    <string name="_4_4_10">4.4/10</string>
+    <string name="detalle_de_la_pelicula">Detalle de la pelicula</string>
+    <string name="overview">overview</string>
+    <string name="portada_de_la_pelicula">Portada de la pelicula</string>
+    <string name="_2021_06_17">(2021-06-17)</string>
+    <string name="detalle_de_la_pelicula_traducci_n">Detalle de la pelicula (Traducción)</string>
+    <string name="cargando">Cargando</string>
+    <string name="no_se_puede_traducir">No se puede traducir el texto</string>
+    <string name="error_al_traducir">Error al momento de traducir</string>
 </resources>

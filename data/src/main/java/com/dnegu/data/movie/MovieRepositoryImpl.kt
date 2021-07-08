@@ -7,6 +7,7 @@ import com.dnegu.data.common.Repository
 import com.dnegu.data.network.Api
 import com.dnegu.data.network.getData
 import com.dnegu.data.network.getDataAsListApi
+import com.dnegu.data.network.getDataAsListRoom
 
 class MovieRepositoryImpl(private val api: Api, private val movieDao: MovieDao):
     Repository<Movie, MovieEntity>(), MovieRepository {
@@ -14,7 +15,10 @@ class MovieRepositoryImpl(private val api: Api, private val movieDao: MovieDao):
         val api_keyValue = "f46b58478f489737ad5a4651a4b25079"
         return fetchDataList(
             apiDataProvider = {
-                api.getMovieList(id,api_keyValue).getDataAsListApi()
+                val datos = api.getMovieList(id,api_keyValue)
+                datos.body()?.results?.map { it.mapToRoomEntity() }
+                    ?.let { movieDao.insertMultiple(it) }
+                datos.getDataAsListApi()
             },
             dbDataProvider = {
                 movieDao.getMovieList()
